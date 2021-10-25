@@ -1,0 +1,194 @@
+%XeLaTeX
+%\documentclass[twoside]{cctart}
+\documentclass[twoside]{ctexart}
+\usepackage{headrule,amsmath,vatola,amssymb,niceframe}
+\usepackage{graphicx,multirow,bm,rotating}
+\usepackage{booktabs,dcolumn}%关于小数点对齐
+\newcolumntype{z}[1]{D{.}{.}{#1}}%关于小数点对齐
+\usepackage{tabularx}%关于表自动折行
+\usepackage{slashbox}%表格加斜线
+\allowdisplaybreaks%%%%%%长公式自动分页
+
+%=========================Page Format (此部分定义请勿修改)================================
+\setlength{\voffset}{-3mm} \headsep 0.3 true cm \topmargin 0pt
+\oddsidemargin 0pt \footskip 2mm \evensidemargin 0pt \textheight
+21.5 true cm \textwidth 14.5 true cm \setcounter{page}{1}
+\parindent 2\ccwd
+\nofiles
+
+\TagsOnRight\baselineskip 12pt
+
+\catcode`@=11 \long\def\@makefntext#1{\parindent 1em\noindent
+\hbox to 0pt{\hss$^{}$}#1} \catcode`\@=12
+
+\catcode`@=11
+\def\evenhead{}
+\def\oddhead{}
+\headheight=8truemm
+% \footheight=0pt
+\def\@evenhead{\pushziti
+  \vbox{\hbox to\textwidth{\rlap{\rm\thepage}\hfil{\evenhead}\llap{}}
+    \protect\vspace{2truemm}\relax
+    \hrule depth0pt height0.15truemm width\textwidth
+  }\popziti}
+\def\@oddhead{\pushziti
+  \vbox{\hbox to\textwidth{\rlap{}{\oddhead}\hfil\llap{\rm\thepage}}
+    \protect\vspace{2truemm}\relax
+    \hrule depth0pt height0.15truemm width\textwidth
+  }\popziti}
+\def\@evenfoot{}
+\def\@oddfoot{}
+\catcode`@=12
+\allowdisplaybreaks%%%%%%长公式自动分页
+
+\renewcommand{\baselinestretch}{1.2}
+\def\D{\displaystyle} \def\n{\noindent}
+\def\ST{\songti\rm\relax}
+\def\HT{\heiti\bf\relax}
+\def\FS{\fangsong\relax}
+\def\KS{\kaishu\relax}
+\def\sz{\small\zihao{-5}}
+\def\vs{\vspace{0.3cm}}
+\def\TT{{\rm T}}
+\def\dd{{\rm d}}
+\def\ee{{\rm e}}
+
+
+\def\SEC#1#2#3{\vspace*{.2in} \begin{center}
+{\bf\LARGE\zihao{3} #1}\\[.2in]
+\zihao{4}\fangsong#2\\[.1in]
+\small\zihao{-5}#3 \end{center}}
+
+\def\ESEC#1#2#3{\vskip.2in \begin{center}
+{\bf\Large #1}\\[.2in]
+\normalsize #2\\[.1in]\end{center}
+\footnotesize #3 }
+
+\def\SUB#1{\vspace{.2in} \leftline{\large\bf\heiti\zihao{-4}#1}
+\vspace{.1in}}
+\def\sub#1{\leftline{\bf\heiti\zihao{5}#1}}
+
+\def\REFERENCE{\vspace*{.2in}
+{\noindent\bf\heiti\zihao{5}参考文献} \vspace*{.1in}}
+%=========================================================================
+
+\begin{document}
+
+%--------------------------页眉-------------------------------------
+\def\evenhead{{\protect\small{\zihao{-5}\songti \hfill 数~~学~~的~~实~~践~~与~~认~~识}
+\hfill{\zihao{-5}\songti }\,\,XX\,{\zihao{-5}\songti 卷}}}
+\def\oddhead{{\protect{\zihao{-5}\songti }\small\,\,XX\,{\zihao{-5}\songti 期}
+\hfill {\small\zihao{-5}\songti{第一作者名, 等:  文章题目
+
+  }
+ }\hfill}}
+
+%---------------------------首页页眉---------------------------------
+\vspace*{-20mm} \thispagestyle{empty} \noindent \hbox to
+\textwidth{\small{\zihao{-5}\songti 第}\,\,43\,{\zihao{-5}\songti
+卷 第}\,\,XX \,{\zihao{-5}\songti 期}\hfill {\zihao{5}
+数学的实践与认识}\hfill Vol.XX, No.\,XX } \vskip -0.2mm
+\par\noindent
+\hbox to \textwidth{\small 20XX~{\zihao{-5}\songti 年}\,\,XX
+{\zihao{-5}\songti 月}\hfill MATHEMATICS IN PRACTICE AND THEORY
+\hfill XXXX, 20XX} \vskip -1mm
+\par\noindent
+\rule[2mm]{\textwidth}{0.5pt}\hspace*{-\textwidth}\rule[1.5mm]{\textwidth}{0.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\ziju{0.025} \noindent {\small\HT 文章编号:\ }1000-6788(2009)00-0000-00
+%下面是方框图案的排法
+%
+
+%-----------------------脚注--------------------------------------------------
+\footnotetext{{\HT 收稿日期:}\ 2021-10-24} \footnotetext{{\HT
+资助项目:重点研究基地项目()}
+
+
+}
+
+%---------------------题目、作者、单位、摘要、关键词, 中图分类号(必须提供)------------------
+\vspace{0.5cm}
+%{中文题目}{作者}{单位}
+\SEC{能源}{张三}{理工大学经济与管理学院}
+
+\vspace{0.4cm} \vskip.1in {\narrower\zihao{5}\fangsong\noindent
+{\heiti 摘\quad 要:}\ \ %下面放中文摘要
+
+
+
+
+\vskip.1in \noindent {\heiti 关键词:}\quad %下面放中文关键词
+
+
+
+}
+
+
+\normalsize \normalsize \abovedisplayskip=2.0pt plus 2.0pt minus
+2.0pt \belowdisplayskip=2.0pt plus 2.0pt minus 2.0pt \baselineskip
+16pt
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%排版的基本要求%%%%%%%%%%%%%%%%
+
+% 1. \sub{1.1~~}二级标题命令 \sub{1.1.1~~}  %{\HT 定理~1}\quad   {\HT 证明}\quad
+
+% 2. 在排公式号时,请用顺序号如:(1),(2),(3) 公式号的命令用\tag 1,  文中的句号用``."表示,
+
+% 3. 在公式中的括号要随公式中的分式的大小来变化.
+%   如果公式中有 \frac \int \sum等, 括号要用\left \right来定义括号.
+
+% 3. 所有的标点符号都用"英文"中的标点符号----就是"半角"加空格
+% 4. 图中的文字一定要清晰, 不要用彩色图.
+% 5. 参考文献的顺序应按照在文中出现的先后顺序来排序.
+
+%%%%%%%%%%%%%%%%%%%%%%正文%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\SUB{1\ \ 引言}%一级标题
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%参考文献%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\REFERENCE
+
+\baselineskip 11pt {\small \parindent=4.75mm
+
+%注意：所英文文献作者名应按照"姓"在前"名"("名"要缩写)在后书写.
+
+\REF{[1]}
+
+
+
+
+      }
+
+
+
+
+
+%%%%%%%%%%%%%%%英文部分%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{0.4cm}
+%{英文题目}{作单}{单位}
+\ESEC{Oil Price}{San Zhang}{ University of Technolgoy}
+
+
+\vspace{0.4cm}
+ \vskip.1in \rm \noindent {\narrower\small {\bf Abstract:}\ \ %放英文摘要
+
+
+\vskip.1in \noindent{\bf Keywords:}\ \ %放英文关键词
+
+}
+
+
+
+
+
+
+\end{document}

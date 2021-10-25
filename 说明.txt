@@ -1,0 +1,2 @@
+若没有安装niceframe压缩包，安装后即可使用。
+将niceframe安装包，解压至C:\CTEX\CTeX\tex\latex，运行其中的example.tex，就安装好啦。
